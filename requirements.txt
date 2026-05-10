@@ -4,3 +4,4 @@ loguru
 datasets
 typer
 rich
+transformers==4.55.2

@@ -59,8 +59,9 @@ random.seed(42)
 
 
 ROUND_SETTING = {
-    0: {"ref_models": ["Qwen/Qwen3-4B", "google/gemma-3-4b-it"], "gen_num": 3},
-    1: {"ref_models": ["Qwen/Qwen3-8B"],                          "gen_num": 2},
+    0: {"ref_models": ["Qwen/Qwen3-4B", "google/gemma-3-4b-it"], "gen_num": 5},
+    1: {"ref_models": ["Qwen/Qwen3-4B, Qwen/Qwen3-8B", "google/gemma-3-4b-it"], "gen_num": 3},
+    2: {"ref_models": ["Qwen/Qwen3-8B"], "gen_num": 1},
 }
 
 
