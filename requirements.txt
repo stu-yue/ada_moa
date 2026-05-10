@@ -5,3 +5,4 @@ datasets
 typer
 rich
 transformers==4.55.2
+vllm==0.10.1.1

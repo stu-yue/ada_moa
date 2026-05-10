@@ -1,5 +1,10 @@
-export CODE_KAGGLE_DATA_DIR=code_kaggle_data_dir
-REFERENCE_MODELS="Qwen/Qwen3-4B google/gemma-3-4b-it Qwen/Qwen3-8B"
+export VLLM_MODEL_ENDPOINTS='{
+  "Qwen/Qwen3-4B": "http://localhost:8001/v1",
+  "Qwen/Qwen3-8B": "http://localhost:8002/v1",
+  "google/gemma-3-4b-it": "http://localhost:8003/v1"
+}'
+
+echo $VLLM_MODEL_ENDPOINTS
 
 for MODEL in Qwen/Qwen3-8B
     do

@@ -505,7 +505,7 @@ if __name__ == "__main__":
                         help="datasets.map worker count")
     parser.add_argument("--temperature", type=float, default=0.7)
     parser.add_argument("--max_tokens", type=int, default=2048)
-    parser.add_argument("--sample_num", type=int, default=400)
+    parser.add_argument("--sample_num", type=int, default=200)
 
     parser.add_argument("--add_role", action="store_true",
                         help="auto-generate per-round role descriptions for ref models")
