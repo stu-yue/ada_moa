@@ -148,6 +148,7 @@ def generate_vllm(
                 temperature=(temperature if temperature > 1e-4 else 0),
                 max_tokens=max_tokens,
                 n=n,
+                extra_body={"chat_template_kwargs": {"enable_thinking": False}},
             )
 
             if n == 1:

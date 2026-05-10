@@ -9,7 +9,7 @@ for MODEL_NAME in Qwen/Qwen3-8B
     do
         for DATASET in CEB-Conversation-S CEB-Conversation-T
             do
-                # REFERENCE_MODELS="Qwen/Qwen3-4B google/gemma-3-4b-it Qwen/Qwen3-8B"
+                # REFERENCE_MODELS="Qwen/Qwen3-4B HuggingFaceTB/SmolLM3-3B Qwen/Qwen3-8B"
                 # python eval_ceb.py --model $MODEL --add_role --moderate_end --moderate_select --reference_models $REFERENCE_MODELS --dataset $DATASET
                 # python eval_ceb.py --model $MODEL --reference_models $REFERENCE_MODELS --dataset $DATASET
                 # python eval_ceb.py --dataset $DATASET --model $MODEL

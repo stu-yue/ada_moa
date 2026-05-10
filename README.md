@@ -6,36 +6,36 @@
 2. 部署模型，以下为三个模型的示例：
 ```shell
 CUDA_VISIBLE_DEVICES=0 \
-nohup vllm serve Qwen/Qwen3-4B \
+nohup vllm serve /root/autodl-fs/Qwen3-4B \
   --port 8001 \
   --dtype bfloat16 \
-  --gpu-memory-utilization 0.20 \
-  --max-model-len 8192 \
+  --gpu-memory-utilization 0.40 \
+  --max-model-len 4096 \
   > qwen4b.log 2>&1 &
 
 CUDA_VISIBLE_DEVICES=0 \
-nohup vllm serve Qwen/Qwen3-8B \
+nohup vllm serve /root/autodl-fs/SmolLM3-3B \
   --port 8002 \
   --dtype bfloat16 \
-  --gpu-memory-utilization 0.35 \
-  --max-model-len 8192 \
-  > qwen8b.log 2>&1 &
+  --gpu-memory-utilization 0.40 \
+  --max-model-len 4096 \
+  > smollm3b.log 2>&1 &
 
-CUDA_VISIBLE_DEVICES=0 \
-nohup vllm serve google/gemma-3-4b-it \
+CUDA_VISIBLE_DEVICES=1 \
+nohup vllm serve /root/autodl-fs/Qwen3-8B \
   --port 8003 \
   --dtype bfloat16 \
-  --gpu-memory-utilization 0.20 \
+  --gpu-memory-utilization 0.75 \
   --max-model-len 8192 \
-  > gemma4b.log 2>&1 &
+  > qwen8b.log 2>&1 &
 ```
 
 3. 根据部署的端口，修改`run_all_test.sh`中，`VLLM_MODEL_ENDPOINTS`配置信息：
 ```shell
 export VLLM_MODEL_ENDPOINTS='{
   "Qwen/Qwen3-4B": "http://localhost:8001/v1",
-  "Qwen/Qwen3-8B": "http://localhost:8002/v1",
-  "google/gemma-3-4b-it": "http://localhost:8003/v1"
+  "HuggingFaceTB/SmolLM3-3B": "http://localhost:8002/v1",
+  "Qwen/Qwen3-8B": "http://localhost:8003/v1"
 }'
 ```
 
